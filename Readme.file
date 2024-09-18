@@ -1,0 +1,44 @@
+tsc index.ts => Run this command inside terminal to transform the index.ts code into Javascript code which will create index.js file 
+tsc --init => Run this inside on terminal to configure the typescript compiler and ensure to be inside your directory
+
+
+Editing the content of the tsconfig.json file:
+"target": "es2016", => delete the es2016 and do control + space in your keyboard to see more options, incase you want more fast and short run of your code depending where you deploy them
+Uncommentent changer the "outDir": "./" inside the tsconfig to "outDir": "./dist" so that when the typescript code will be save inside the dist folder when it's compile into Javascript
+Uncommentent the "removeComments": true so that this will help to remove all comment when the typescript code is compile into Javascript, this will make the code more shorter
+Uncommentent "noEmitOnError": true so that the typescriptcode with error will not be compile to Javascript or will not generate Javascriptcode
+Uncommentent "sourceMap": true to allow the typescript code to run and compile into Javascript code line by line, recompile the code by running tsc inside the terminal
+Uncommentent "noUnusedParameters": true to allow any use parameters to trow an error
+Uncommentent "noUnusedLocals": true to allow error to trow out when decleared unused variables inside the code or functions
+Uncommentent "noImplicitReturns": true to allow detect an error error when forgoten to add second/elseif return in a function and also help to trow error when a wrong return 'type' is decleared,
+Declearing the second/elseif return in a typescript function is important as the code will trow error if incase first return did not meet up the requirement and also type was not declear,
+There is always undifined return default when any function did not meet up the critarials, and this trow an error in typescript when function type is decleared or not
+"include": ["src/**/*.ts"], and "exclude": ["node_modules"] was added inside the tsconfig outside the compilerOption in order to tsc command to run and save in dist folder successful inside the terminal
+
+
+
+Cleaning the project directory:
+create new folder call src
+drage and drop the index.ts into into into it 
+changer the "rootDir": "./" inside the tsconfig into "rootDir": "./src" in order for the rootDir to locate the src folder
+delete the index.js file generated from the first command runned on the terminal
+
+
+
+To compile or generate the typescript code into Javascript code:
+tsc => just run this on the command, this will generate dist folder with index.js in it where all the typescript code will be compile into Javascript and save
+
+
+
+Deburging typescript application line by line with the  sourceMap: true inside tsconfig:
+After the recompile of the application as instructed on line 10, a file by name index.js.map will be created under dist folder for machine deburgers
+Inside the code, click on the point at the first line of the code in order for the Deburging to run on each line by line
+Then click on run and deburg panelick 
+After then click on create a launch.json file and select node.js
+this will create new file by name launch.json with some code configuration that will help on the Deburging
+imside the new created launch.json, add "preLanuchTask": "tsc build - tsconfig.json", this will tell vscode to use tsc compiler to build the application using the tsconfig.json configuration
+After adding this code click again on the run and deburg and click on the lunch programm on the tope and will run the deburg code 
+Above the center screen have some navigation keys
+You can expand the variables at the side bar to view your deburg 
+Also expand the watch, click on plus sign and then enter the variable you want to deburg
+
